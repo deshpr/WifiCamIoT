@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dip"
+    >
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:titleTextColor="#ffffff"
+
+        />
+    <LinearLayout
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            style="@style/LabelStyle"
+            android:text="Camera"
+            />
+        <Spinner
+            android:background="@drawable/layout_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/camera_choice_list_view"
+            android:padding = "0dip"
+            />
+
+        <Button
+            android:layout_gravity="center"
+            android:layout_marginTop="50dip"
+            android:layout_centerInParent="true"
+            android:id="@+id/startStreamingBtn"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Start Server"
+            style="@style/LabelStyle"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>

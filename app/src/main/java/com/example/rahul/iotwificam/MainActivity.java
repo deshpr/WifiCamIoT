@@ -9,6 +9,7 @@ import android.text.format.Formatter;
 import android.util.Log;
 import android.widget.Button;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.os.Handler;
@@ -31,10 +32,24 @@ public class MainActivity extends Activity  {
     private static Handler serverThreadHandler;
     private static  Handler uiThreadHandler;
 
-
+    private CheckBox showAgain;
     private Camera currentCamera;
     public static final String TAG="MYAPP";
     public static final String COM_TAG = "COM";
+
+    private void displayServerDetails(String serverAddress, int portNumber){
+        android.view.LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.layout_server_details, null);
+        TextView ipAddress = (TextView)dialogView.findViewById(R.id.serverIp);
+        ipAddress.setText(serverAddress);
+        TextView portNumberView = (TextView)dialogView.findViewById(R.id.serverPort);
+        portNumberView.setText(portNumber);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setView(dialogView);
+        AlertDialog dialog = Utilities.createAlertDialog(dialogView,this,"Got it",null, null, null);
+        dialog.show();
+    }
+
 
     public static Camera getCamera(int selectedCameraOption){
         Camera camera = null;
@@ -110,6 +125,7 @@ private void setUpCamera(int selectedCameraOption, DialogInterface.OnClickListen
         String ipAddress = Utilities.getIpAddress(this);
         int portNumber = 1069;
         myCameraPreview = new AndroidCameraView(this, currentCamera, this);
+      //  displayServerDetails(ipAddress, portNumber);
         previewLayout.addView(myCameraPreview);
           try{
               camServer = new CamServer(ipAddress, portNumber);

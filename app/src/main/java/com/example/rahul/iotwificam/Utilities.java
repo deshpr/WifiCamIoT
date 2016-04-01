@@ -2,6 +2,7 @@ package com.example.rahul.iotwificam;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.net.wifi.WifiManager;
@@ -48,6 +49,18 @@ public class Utilities {
     }
 
 
+    public static android.app.AlertDialog createAlertDialog(View dialogView, Activity parentActivity, String positiveText,
+                                                             DialogInterface.OnClickListener positiveButtonDelegate,
+                                                             String negativeButtonText, DialogInterface.OnClickListener negativeButtonDelegate){
+        AlertDialog.Builder builder = new AlertDialog.Builder(parentActivity);
+
+        builder.setView(dialogView);
+        builder.setPositiveButton(positiveText, positiveButtonDelegate);
+        if(negativeButtonText!=null && negativeButtonText.trim().length()!=0){
+            builder.setNegativeButton(negativeButtonText, negativeButtonDelegate);
+        }
+        return builder.create();
+    }
 
     public  static android.app.AlertDialog displayAlertDialog(String message, Activity parentActivity, String positiveText, DialogInterface.OnClickListener positiveListener,
                                                               String negativeText, DialogInterface.OnClickListener  negativeListener){

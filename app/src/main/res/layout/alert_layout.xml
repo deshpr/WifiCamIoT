@@ -6,6 +6,7 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:text="@string/alert_head"
+        android:id="@+id/alert_title"
         android:textAlignment="center"
         android:background="@color/colorPrimary"
         android:textColor="#ffffff"
@@ -14,6 +15,7 @@
         />
 
     <TextView
+        android:layout_margin="10dip"
         android:id="@+id/alert_message"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"

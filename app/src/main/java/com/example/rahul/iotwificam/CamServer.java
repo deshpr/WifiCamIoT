@@ -16,6 +16,8 @@ import java.util.Map;
 
 import fi.iki.elonen.NanoHTTPD;
 
+
+
 public class CamServer extends NanoHTTPD {
 
     public CamServer(String ipAddress, int portNumber) throws IOException {

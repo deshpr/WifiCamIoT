@@ -1,5 +1,6 @@
+
 <resources>
-    <string name="app_name">IotWifiCam</string>
+    <string name="app_name">IoTWifiCam</string>
     <string name="title_activity_details">DetailsActivity</string>
     <string name="action_settings">Settings</string>
     <string name="alert_head">ALERT</string>
@@ -14,5 +15,6 @@
     <string name="ok">I\'m cool with that.</string>
     <string name="nope">Nope.</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="webpage_string">View Client-Side Code</string>
 
 </resources>

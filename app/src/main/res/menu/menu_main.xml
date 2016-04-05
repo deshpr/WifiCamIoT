@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.rahul.wificam.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_webpage"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="@string/webpage_string"
         app:showAsAction="never" />
 </menu>

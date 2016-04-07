@@ -1,16 +1,13 @@
-package com.example.rahul.iotwificam;
+package com.rahul_arnold.apps.iotwificam;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.net.wifi.WifiManager;
-import android.text.format.Formatter;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;

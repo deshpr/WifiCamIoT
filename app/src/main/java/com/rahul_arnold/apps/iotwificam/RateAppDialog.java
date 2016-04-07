@@ -1,4 +1,4 @@
-package com.example.rahul.iotwificam;
+package com.rahul_arnold.apps.iotwificam;
 
 /**
  * Created by Rahul on 4/4/2016.
@@ -6,9 +6,7 @@ package com.example.rahul.iotwificam;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.Context;
-import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
@@ -20,7 +18,7 @@ public class RateAppDialog {
     private static String IS_DISABLED = "IS_DISABLED";
     private static String NAME = "RATEAPP";
     private static String LAUNCH_COUNT = "LAUNCH_COUNT";
-    private static int LAUNCH_FOR_PROMPT =0;
+    private static int LAUNCH_FOR_PROMPT =10;
 
      public static void show(final Context context){
 

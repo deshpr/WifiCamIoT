@@ -1,12 +1,11 @@
-package com.example.rahul.iotwificam.adapters;
+package com.rahul_arnold.apps.iotwificam.adapters;
 import android.widget.ArrayAdapter;
-import android.os.Bundle;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
 import android.widget.TextView;
-import com.example.rahul.iotwificam.R;
+import com.rahul_arnold.apps.iotwificam.R;
 
 
 /**

@@ -1,4 +1,4 @@
-package com.example.rahul.iotwificam;
+package com.rahul_arnold.apps.iotwificam;
 import android.graphics.Color;
 import android.net.wifi.WifiManager;
 import android.view.LayoutInflater;
@@ -16,8 +16,7 @@ import android.app.Dialog;
 import android.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import com.example.rahul.iotwificam.adapters.CameraSpinner;
-import android.util.Log;
+import com.rahul_arnold.apps.iotwificam.adapters.CameraSpinner;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -52,7 +51,7 @@ public class DetailsActivity extends AppCompatActivity {
     private void setUpWifi(){
         boolean wifiOn = Utilities.isWifiTurnedOn(this);
         if(!wifiOn){
-            Log.d(MainActivity.TAG, "wIFI IS OFF");
+        //    Log.d(MainActivity.TAG, "wIFI IS OFF");
             AlertDialog dialog =  Utilities.displayAlertDialog(null, "Please turn on Wifi, and make sure both the client and server are connected to the same wifi network.",
                     this, "OK", null, null, null, null, null);
             dialog.show();
@@ -93,7 +92,7 @@ public class DetailsActivity extends AppCompatActivity {
     public void displayIpAddress(String serverAddress, boolean showError){
 
         TextView ipAddress = (TextView) findViewById(R.id.serverIp);
-        Log.d(MainActivity.TAG, "Show Error = " + showError);
+      //  Log.d(MainActivity.TAG, "Show Error = " + showError);
         if(showError){
             serverAddress = "WIFI OFF!";
                 ipAddress.setTextColor(Color.argb(255,255,0,0));
@@ -108,12 +107,12 @@ public class DetailsActivity extends AppCompatActivity {
 
     public void registerBroadCastReceiver(){
         IntentFilter filter = new IntentFilter();
-        Log.d(MainActivity.TAG, "Registering the receiver");
+    //    Log.d(MainActivity.TAG, "Registering the receiver");
       filter.addAction("android.net.wifi.WIFI_STATE_CHANGED");
         filter.addAction("android.net.wifi.STATE_CHANGE");
         filter.addAction(WifiManager.SUPPLICANT_CONNECTION_CHANGE_ACTION);
         if(receiver==null){
-            Log.d(MainActivity.TAG, "Registered the receiver");
+       //     Log.d(MainActivity.TAG, "Registered the receiver");
             receiver = new DetectWifiStateChange(this);
         }
         this.registerReceiver(receiver, filter);
@@ -150,7 +149,7 @@ public class DetailsActivity extends AppCompatActivity {
     @Override
     public void onStop(){
         super.onStop();
-        Log.d(MainActivity.TAG, "Unregistered the receiver in stop");
+   //     Log.d(MainActivity.TAG, "Unregistered the receiver in stop");
         if(receiver!=null)
             try{
                 unregisterReceiver(receiver);
@@ -223,7 +222,7 @@ public class DetailsActivity extends AppCompatActivity {
 
                 boolean wifiOn = Utilities.isWifiTurnedOn(DetailsActivity.this);
                 if (!wifiOn) {
-                    Log.d(MainActivity.TAG, "wIFI IS OFF");
+         //           Log.d(MainActivity.TAG, "wIFI IS OFF");
                     AlertDialog dialog = Utilities.displayAlertDialog(null, "Please turn on Wifi, and make sure both the client and server are connected to the same wifi network.",
                             DetailsActivity.this, "OK", null, null, null, null, null);
                     dialog.show();

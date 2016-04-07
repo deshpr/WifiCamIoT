@@ -1,17 +1,13 @@
-package com.example.rahul.iotwificam;
+package com.rahul_arnold.apps.iotwificam;
 
 
 
 /**
  * Created by Rahul on 3/28/2016.
  */
-import android.app.Activity;
 import android.util.Log;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.net.ServerSocket;
-import java.net.Socket;
 import java.util.Map;
 
 import fi.iki.elonen.NanoHTTPD;

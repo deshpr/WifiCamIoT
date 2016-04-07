@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.rahul.iotwificam">
+    package="com.rahul_arnold.apps.iotwificam">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -20,15 +20,27 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!--android:debuggable="false" because it is automatically set when the project is built, based off of
+        whether the apk is being built for the debug version or the release version. -->
+
 
         <!--<receiver android:name=".DetailsActivity$DetectWifiStateChange">-->
             <!--<intent-filter android:priority="100">-->
                 <!--<action android:name="android.net.wifi.STATE_CHANGE" />-->
             <!--</intent-filter>-->
         <!--</receiver>-->
-        <activity android:name=".MainActivity"></activity>
+        <!--
+        This ensures onConfigurationChanges is called when the  orientation changes,
+        and onDestroy is not called.
+        -->
         <activity
-            android:name=".DetailsActivity"
+            android:name="com.rahul_arnold.apps.iotwificam.MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            >
+
+        </activity>
+        <activity
+            android:name="com.rahul_arnold.apps.iotwificam.DetailsActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -37,10 +49,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Main2Activity"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

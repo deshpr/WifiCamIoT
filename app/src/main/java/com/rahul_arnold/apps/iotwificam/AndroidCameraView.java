@@ -1,17 +1,15 @@
-package com.example.rahul.iotwificam;
+package com.rahul_arnold.apps.iotwificam;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.io.IOException;
 import java.net.ConnectException;
-import android.app.AlertDialog;
-import android.app.DialogFragment;
+
 import android.os.Environment;
-import android.support.annotation.MainThread;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder;
 import java.net.URL;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+
 import android.hardware.Camera;
 import android.content.Context;
 import android.util.*;
@@ -30,12 +28,7 @@ import java.net.Socket;
 
 import android.graphics.ImageFormat;
 import android.graphics.YuvImage;
-import  android.widget.TextView;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.app.Activity;
-import android.widget.Toast;
-
 
 
 /**
@@ -152,7 +145,10 @@ public class AndroidCameraView extends SurfaceView  implements SurfaceHolder.Cal
     }
 
     public void surfaceDestroyed(SurfaceHolder surfaceHolder){
+        if(myCamera!=null){
+            this.myCamera.stopPreview();
 
+        }
     }
 
 

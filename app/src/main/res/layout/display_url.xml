@@ -37,7 +37,7 @@
             android:text=" Clone the code from git:\n
             https://github.com/deshpr/IotWifiCam_Client.git"
             />
-        <TextView
+<!--        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="OR"
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:text="Learn how the client works, and write your own by following the tutorial at\n
             http://data.windowsazure.com/"
-            />
+            /> -->
     <TextView
         android:textSize="15dip"
         android:id="@+id/displayLinks"

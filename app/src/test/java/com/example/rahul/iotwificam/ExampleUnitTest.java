@@ -1,4 +1,4 @@
-package com.example.rahul.iotwificam;
+package com.rahul_arnold.apps.iotwificam;
 
 import org.junit.Test;
 

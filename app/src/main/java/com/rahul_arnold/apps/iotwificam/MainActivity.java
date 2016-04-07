@@ -1,12 +1,15 @@
-package com.example.rahul.iotwificam;
+package com.rahul_arnold.apps.iotwificam;
 
 import android.app.AlertDialog;
+import android.content.res.Configuration;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
 import android.widget.FrameLayout;
 import android.content.Intent;
+import android.widget.Toast;
+
 import java.io.IOException;
 
 
@@ -32,10 +35,28 @@ public class MainActivity extends Activity  {
     private CamServer camServer;
 
     private void releaseCamera(){
+
         currentCamera.stopPreview();
         currentCamera.setPreviewCallback(null);
         currentCamera.release();
         currentCamera = null;
+    }
+
+    private void changeCameraOrientation(int desiredOrientation){
+        if(currentCamera == null)
+            return;
+        String mode = "";
+            switch (desiredOrientation){
+                case Configuration.ORIENTATION_LANDSCAPE:
+                    mode = "LANDSCAPE";
+                   currentCamera.setDisplayOrientation(0);
+                    break;
+                case Configuration.ORIENTATION_PORTRAIT:
+                    mode = "POTRAIT";
+                    currentCamera.setDisplayOrientation(90);
+                    break;
+            }
+        Toast.makeText(this, "Switching to " + mode, Toast.LENGTH_SHORT).show();
     }
 
     private void setUpCamera(int selectedCameraOption){
@@ -45,11 +66,18 @@ public class MainActivity extends Activity  {
                 this, "OK", null,
                 null, null, null, null);
             dialog.show();
-            releaseCamera();
+       //     releaseCamera();
             finish();
     }
+        int orientation = this.getResources().getConfiguration().orientation;
+        changeCameraOrientation(orientation);
+    }
 
-}
+    @Override
+    public void onConfigurationChanged(Configuration  newConfig){
+        super.onConfigurationChanged(newConfig);
+        changeCameraOrientation(newConfig.orientation);
+    }
 
     private void stopAndReleaseCamera(){
         if(camServer!=null && camServer.isAlive()){

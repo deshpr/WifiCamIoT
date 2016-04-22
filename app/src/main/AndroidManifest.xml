@@ -19,7 +19,9 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:screenOrientation="sensor"
+        >
         <!--android:debuggable="false" because it is automatically set when the project is built, based off of
         whether the apk is being built for the debug version or the release version. -->
 
@@ -42,7 +44,9 @@
         <activity
             android:name="com.rahul_arnold.apps.iotwificam.DetailsActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="sensor"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,8 +1,9 @@
 package com.rahul_arnold.apps.iotwificam;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.net.wifi.WifiManager;
 import android.view.LayoutInflater;
-
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.AdapterView;
 import android.view.View;
@@ -26,6 +27,8 @@ import android.content.Context;
  */
 
 import android.content.IntentFilter;
+
+import android.app.Activity;
 
 public class DetailsActivity extends AppCompatActivity {
 
@@ -59,8 +62,6 @@ public class DetailsActivity extends AppCompatActivity {
         }
     }
 
-
-
     @Override
     public  boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -87,6 +88,7 @@ public class DetailsActivity extends AppCompatActivity {
         d.show();
     }
 
+
     private int  previousColor;
 
     public void displayIpAddress(String serverAddress, boolean showError){
@@ -102,8 +104,6 @@ public class DetailsActivity extends AppCompatActivity {
         }
         ipAddress.setText(serverAddress);
     }
-
-
 
     public void registerBroadCastReceiver(){
         IntentFilter filter = new IntentFilter();
@@ -189,7 +189,11 @@ public class DetailsActivity extends AppCompatActivity {
         setContentView(R.layout.layout_details);
         previousColor = ((TextView)findViewById(R.id.serverIp)).getCurrentTextColor();
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
+       // if(this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+            setSupportActionBar(toolbar);
+      //  }
+
         cameraChoiceSpinner = (Spinner)this.findViewById(R.id.camera_choice_list_view);
         cameraChoiceSpinner.setAdapter(new CameraSpinner(this, R.layout.layout_spinner,
                 new String[]{

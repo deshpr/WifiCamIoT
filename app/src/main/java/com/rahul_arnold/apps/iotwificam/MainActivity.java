@@ -24,9 +24,9 @@ public class MainActivity extends Activity  {
         // open the camera.
         try{
             camera = Camera.open(selectedCameraOption);
-            Log.d(TAG, "Created the camera  :) ");
+        //    Log.d(TAG, "Created the camera  :) ");
         }catch(Exception ex){
-            Log.d(TAG, "There was an exception when opening the camera");
+          //  Log.d(TAG, "There was an exception when opening the camera");
         }
       return camera;
     }
@@ -56,7 +56,7 @@ public class MainActivity extends Activity  {
                     currentCamera.setDisplayOrientation(90);
                     break;
             }
-        Toast.makeText(this, "Switching to " + mode, Toast.LENGTH_SHORT).show();
+ //       Toast.makeText(this, "Switching to " + mode, Toast.LENGTH_SHORT).show();
     }
 
     private void setUpCamera(int selectedCameraOption){
@@ -95,7 +95,7 @@ public class MainActivity extends Activity  {
 
         Intent launchedBy  = getIntent();
         int selectedCameraOption = launchedBy.getIntExtra(DetailsActivity.CameraChoiceKey, DetailsActivity.DEFAULT_CAMERA_CHOICE);
-        Log.d(MainActivity.TAG, "Camera choice jey = " + selectedCameraOption);
+      //  Log.d(MainActivity.TAG, "Camera choice jey = " + selectedCameraOption);
         setUpCamera(selectedCameraOption);
         final int portNumber = launchedBy.getIntExtra(DetailsActivity.PortNumberKey, 1069);
         final String ipAddress = launchedBy.getStringExtra(DetailsActivity.IPAddressKey);
@@ -109,7 +109,7 @@ public class MainActivity extends Activity  {
               camServer.start();
           }
           catch(IOException ex){
-              Log.d(MainActivity.TAG, "Could not start the server");
+          //    Log.d(MainActivity.TAG, "Could not start the server");
           }
     }
 

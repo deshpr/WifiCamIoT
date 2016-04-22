@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+   android:gravity="center_vertical"
+    >
+
+    <LinearLayout
+
+        android:paddingLeft="20dip"
+        android:paddingRight="20dip"
+        android:layout_centerInParent="true"
+        android:layout_width="0dip"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            style="@style/LabelStyle"
+            android:text="Camera"
+            />
+        <Spinner
+            android:background="@drawable/layout_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/camera_choice_list_view"
+            android:padding = "0dip"
+            />
+        <include layout="@layout/layout_server_details" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="0dip"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:gravity="center"
+        >
+        <Button
+
+
+            android:layout_marginTop="0dip"
+            android:layout_centerInParent="true"
+            android:id="@+id/startStreamingBtn"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Start Server"
+            style="@style/LabelStyle"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            />
+    </LinearLayout>
+
+
+
+</LinearLayout>
+
+</LinearLayout>
